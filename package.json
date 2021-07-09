@@ -1,0 +1,36 @@
+{
+  "name": "webadmin_service",
+  "version": "1.0.0",
+  "description": "webadmin service",
+  "main": "main.js",
+  "bin": "main.js",
+  "scripts": {
+    "build": "node main.js",
+    "start": "systemctl start webadmin_service",
+    "restart": "systemctl restart webadmin_service",
+    "stop": "systemctl stop webadmin_service",
+    "status": "systemctl status webadmin_service"
+  },
+  "pkg": {
+    "scripts": [],
+    "assets": [
+      "admin/**"
+    ],
+    "options": [
+      "expose-gc",
+      "max_old_space_size=4096"
+    ],
+    "libs": [],
+    "targets": []
+  },
+  "keywords": [
+    "webadmin"
+  ],
+  "author": "tqky",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "opn": "^6.0.0",
+    "ws": "^7.5.2"
+  }
+}
