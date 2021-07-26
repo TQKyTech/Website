@@ -80,6 +80,7 @@ function loadMenuItems() {
             $('#' + data.newMenuItem.id).addClass('active');
             TQKy.File.getFile(data.newMenuItem.file, function(_html) {
                 document.title = data.newMenuItem.name;
+                $('#tableTitle').html(data.newMenuItem.name);
                 $('#core-body').html('');
                 TQKy.System.addHtml(document.getElementById('core-body'), _html); 
             });
@@ -95,6 +96,7 @@ function loadMenuItems() {
             $('#' + data.newMenuItem.id).addClass('active');
             TQKy.File.getFile(data.newMenuItem.file, function(_html) {
                 document.title = data.newMenuItem.name;
+                $('#tableTitle').html(data.newMenuItem.name);
                 $('#core-body').html('');
                 TQKy.System.addHtml(document.getElementById('core-body'), _html); 
             });

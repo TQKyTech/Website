@@ -1,13 +1,97 @@
-<div class="card">
-    <div class="card-header">
-        <h5>Default Styling</h5>
-        <span>use class <code>table table-styling</code> inside table
-            element</span>
-
+<style>
+    .table-header-left>.form-control {
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    .table-header-right>.input-group {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: calc(100% - 20px);
+            margin: 1.75rem auto;
+        }
+        .modal-dialog-scrollable {
+            max-height: calc(100% - 3.5rem);
+        }
+        .modal-dialog-scrollable .modal-content {
+            max-height: calc(100vh - 3.5rem);
+        }
+        .modal-dialog-centered {
+            min-height: calc(100% - 3.5rem);
+        }
+        .modal-dialog-centered::before {
+            height: calc(100vh - 3.5rem);
+        }
+        .modal-sm {
+            max-width: calc(100% - 20px);
+        }
+    }
+    @media (min-width: 1000px) {
+        .modal-lg,
+        .modal-xl {
+            max-width: 980px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .modal-lg,
+        .modal-xl {
+            max-width: 1200px;
+        }
+    }
+</style>
+<div id="_vTable" class="card">
+    <!-- <div class="card-header"></div> -->
+    <div class="row mb-3 mt-3">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="table-header-left">
+                <select name="select" class="form-control">
+                    <option value="opt1">Select One Value Only
+                    </option>
+                    <option value="opt2">Type 2</option>
+                    <option value="opt3">Type 3</option>
+                    <option value="opt4">Type 4</option>
+                    <option value="opt5">Type 5</option>
+                    <option value="opt6">Type 6</option>
+                    <option value="opt7">Type 7</option>
+                    <option value="opt8">Type 8</option>
+                </select>
+                <select name="select" class="form-control">
+                    <option value="opt1">Select One Value Only
+                    </option>
+                    <option value="opt2">Type 2</option>
+                    <option value="opt3">Type 3</option>
+                    <option value="opt4">Type 4</option>
+                    <option value="opt5">Type 5</option>
+                    <option value="opt6">Type 6</option>
+                    <option value="opt7">Type 7</option>
+                    <option value="opt8">Type 8</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="table-header-right">
+                <div class="input-group" style="width: auto;" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#large-Modal">
+                    <button class="btn btn-primary btn-sm">
+                        <i class="icofont icofont-ui-add"></i> Thêm
+                    </button>
+                </div>
+                
+                <div class="input-group input-group-primary table-header-search">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="icofont icofont-ui-search" style="color: white;"></i>
+                    </span></div>
+                    <input type="text" class="form-control" placeholder="Search here...">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="card-block table-border-style">
         <div class="table-responsive">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -39,5 +123,15 @@
             </table>
         </div>
     </div>
+    <nav class="mt-3">
+        <div v-html="pagination"></div>
+    </nav>
+</div>
+
+<div class="preloader3 loader-block table-theme-loader">
+    <div class="circ1 loader-default"></div>
+    <div class="circ2 loader-default"></div>
+    <div class="circ3 loader-default"></div>
+    <div class="circ4 loader-default"></div>
 </div>
 <script src="/admin/lib/home/category/camera/index.js"></script>

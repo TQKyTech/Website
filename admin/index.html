@@ -10,12 +10,26 @@
     <meta name="keywords"
         content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="#">
+
+    <style>
+        :root {
+            --default-font-size: 14px;
+            --primary-color: #168038;
+            --accent-color: #74b388;
+        }
+    </style>
+
     <!-- Favicon icon -->
     <link rel="icon" href="/admin/templates/adminty/assets/images/favicon.ico" type="image/x-icon">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="/admin/templates/adminty/assets/icon/icofont/css/icofont.css">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="/admin/templates/adminty/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/admin/templates/adminty/assets/pcassets/css/bootstrap.min.css">
+    
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="/admin/templates/adminty/assets/icon/feather/css/feather.css">
     <!-- Style.css -->
@@ -38,6 +52,125 @@
 
     <script src="/admin/templates/adminty/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="/admin/templates/adminty/assets/js/pcoded.min.js"></script>
+
+    <script src="/admin/assets/js/common/vue.min.js"></script>
+
+
+    <style>
+        /*/ start[Table] - Table /*/
+        .table-header-search {
+            width: 330px;
+        }
+        .table-header-right {
+            float: right;
+            display: flex;
+        }
+        .table-header-left {
+            float: left;
+            display: flex;
+        }
+
+        .card {
+            padding: 20px 30px 20px 30px;
+        }
+        /*/ end[Table] /*/
+
+        .form-control {
+            font-size: var(--default-font-size);
+        }
+        .btn-sm {
+            font-size: var(--default-font-size);
+        }
+        
+        /*/ start[Modal] - Modal /*/
+        .modal-title {
+            font-size: 18px;
+        }
+        /*/ end[Modal] /*/
+
+        /*/ start[Form] - Form /*/
+
+        /*/ end[Form] /*/
+
+        /*/ start[Table] - Table  /*/
+        .table-theme-loader {
+            margin-top: 150px;
+            display: none;
+        }
+        /*/ end[Table] /*/
+    </style>
+
+    <script>
+        /*/ start[Table] - Table  /*/
+        function tableLoading(show) {
+            if (show) {
+                if ($('#_vTable').css('display') != 'none') $('#_vTable').hide();
+                if ($('.table-theme-loader').css('display') == 'none') $('.table-theme-loader').show();
+            } else {
+                if ($('#_vTable').css('display') == 'none') $('#_vTable').show();
+                if ($('.table-theme-loader').css('display') != 'none') $('.table-theme-loader').hide();
+            }
+        }
+
+        var _changedPageEvent = null;
+        function changedPage(page) {
+            if (_changedPageEvent) { _changedPageEvent(page); }
+        }
+        function renderPagination(currentPage, maxPage, onChanged) {
+            _changedPageEvent = onChanged;
+            if (typeof currentPage == "undefined" || typeof maxPage == "undefined") return '';
+            let html = `<ul class="pagination">`;
+            html += `
+                <li class="page-item">
+                    <a class="page-link" aria-label="Previous" onclick="changedPage(${(currentPage > 1 ? currentPage - 1 : 1)})">
+                        <span aria-hidden="true">«</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>`;
+
+            if (maxPage >= 1) html += `<li class="page-item ${(1 == currentPage ? 'active' : '')}"><a class="page-link" onclick="changedPage(1)">1</a></li>`;
+            if (maxPage >= 2) html += (currentPage - 1 > 2 && maxPage > 5) ? `<li class="page-item"><a class="page-link">..</a></li>` : `<li class="page-item ${(2 == currentPage ? 'active' : '')}"><a class="page-link" onclick="changedPage(2)">2</a></li>`;
+            if (maxPage >= 3) {
+                let index = 0;
+                if (maxPage > 5) {
+                    if (currentPage <= 3) {
+                        index = 3;
+                    } else if (maxPage - currentPage <= 2) {
+                        index = maxPage - 2;
+                    } else {
+                        index = currentPage;
+                    }
+                } else {
+                    index = 3;
+                }
+                html += (index == 0 ) ? `<li class="page-item"><a class="page-link">..</a></li>` : `<li class="page-item ${(index == currentPage ? 'active' : '')}"><a class="page-link" onclick="changedPage(${index})">${index}</a></li>`;
+            }
+            if (maxPage >= 4) {
+                let index = 0;
+                if (maxPage - currentPage <= 2 || maxPage <= 5) {
+                    if (maxPage <= 5) {
+                        index = 4;
+                    } else {
+                        index = maxPage - 1;
+                    }
+                    
+                }
+                html += (index == 0 ) ? `<li class="page-item"><a class="page-link">..</a></li>` : `<li class="page-item ${(index == currentPage ? 'active' : '')}"><a class="page-link" onclick="changedPage(${index})">${index}</a></li>`;
+            }
+            if (maxPage >= 5) html += `<li class="page-item ${(maxPage == currentPage ? 'active' : '')}"><a class="page-link" onclick="changedPage(${maxPage})">${maxPage}</a></li>`;
+
+            html += `
+                <li class="page-item">
+                    <a class="page-link" aria-label="Next" onclick="changedPage(${(currentPage < maxPage ? currentPage + 1 : maxPage)})">
+                        <span aria-hidden="true">»</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>`;
+            html += `</ul>`;
+            return html;
+        }
+        /*/ end[Table] /*/
+    </script>
 </head>
 
 <body>

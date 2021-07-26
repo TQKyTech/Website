@@ -1,3 +1,13 @@
+<style>
+    .main-body .page-wrapper {
+        padding: 0rem !important;
+    }
+    .main-body .page-wrapper .page-header {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+</style>
+
 <!-- Pre-loader start -->
 <div class="theme-loader">
     <div class="ball-scale">
@@ -315,6 +325,32 @@
                     <div class="pcoded-inner-content">
                         <div class="main-body">
                             <div class="page-wrapper">
+                                <div class="page-header">
+                                    <div class="row align-items-end">
+                                        <div class="col-lg-8">
+                                            <div class="page-header-title">
+                                                <div class="d-inline">
+                                                    <h4 id="tableTitle">Search Result 2</h4>
+                                                    <!-- <span>lorem ipsum dolor sit amet, consectetur adipisicing
+                                                        elit</span> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-lg-4">
+                                            <div class="page-header-breadcrumb">
+                                                <ul class="breadcrumb-title">
+                                                    <li class="breadcrumb-item" style="float: left;">
+                                                        <a href="index.html"> <i class="feather icon-home"></i> </a>
+                                                    </li>
+                                                    <li class="breadcrumb-item" style="float: left;"><a href="#!">Search</a>
+                                                    </li>
+                                                    <li class="breadcrumb-item" style="float: left;"><a href="#!">Search Result 2</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
                                 <div class="page-body">
                                     <div id="core-body"></div>
                                 </div>
@@ -328,6 +364,88 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<ul>
+    <li>
+        <!-- Modal static-->
+        <div class="modal fade" id="default-Modal" tabindex="-1"
+            role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal title</h4>
+                        <button type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                            <span
+                                aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Static Modal</h5>
+                        <p>Lorem ipsum dolor sit amet,
+                            consectetur adipiscing lorem impus
+                            dolorsit.onsectetur adipiscing</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                            class="btn btn-default waves-effect "
+                            data-dismiss="modal">Close</button>
+                        <button type="button"
+                            class="btn btn-primary waves-effect waves-light ">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <!-- Modal large-->
+        <div class="modal fade" id="large-Modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal title</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="font-size: 17px;">&times;</span>
+                        </button>
+                    </div>
+                    <div id="_vInfo" class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary waves-effect waves-light modal-footer-action-save">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <!-- Modal small-->
+        <div class="modal fade" id="small-Modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal title</h4>
+                        <button type="button" class="close"
+                            data-dismiss="modal"
+                            aria-label="Close">
+                            <span
+                                aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"
+                            class="btn btn-default waves-effect "
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
 <!-- custom js -->
 <script src="/admin/templates/adminty/assets/js/vartical-layout.min.js"></script>
